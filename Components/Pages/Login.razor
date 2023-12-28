@@ -3,3 +3,31 @@
 @inherits LoginBase
 
 <PageTitle>Login</PageTitle>
+
+<MudGrid Spacing="0">
+    <MudItem xs="12" sm="12" md="12">
+        <MudPaper Elevation="0" Height="100dvh" Width="100%">
+            <MudGrid Spacing="0">
+                <MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
+                    <MudItem xs="8" sm="8" md="8">
+                        <MudPaper Height="100dvh">
+                            <MudImage Fluid="true" ObjectFit="ObjectFit.Cover" ObjectPosition="ObjectPosition.Center" Src=""></MudImage>
+                        </MudPaper>
+                    </MudItem>
+                    <MudItem xs="4" sm="4" md="4">
+                        <MudPaper Class="d-flex align-center justify-center" Height="100dvh">
+                            
+                        </MudPaper>
+                    </MudItem>
+                </MudHidden>
+                <MudHidden Breakpoint="Breakpoint.MdAndDown" Invert="true">
+                    <MudItem xs="12" sm="12" md="12">
+                        <MudPaper Class="d-flex align-center justify-center" Height="100dvh">
+                            
+                        </MudPaper>
+                    </MudItem>
+                </MudHidden>
+            </MudGrid>
+        </MudPaper>
+    </MudItem>
+</MudGrid>
