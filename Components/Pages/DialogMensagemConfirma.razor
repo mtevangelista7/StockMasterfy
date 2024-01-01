@@ -1,0 +1,16 @@
+﻿<MudDialog>
+    <DialogContent>
+        <MudText Color="Color.Primary" Typo="Typo.h6">@Mensagem</MudText>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Submit">Ok</MudButton>
+    </DialogActions>
+</MudDialog>
+
+
+@code {
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+    [Parameter] public string Mensagem { get; set; }
+
+    void Submit() => MudDialog.Close(DialogResult.Ok(true));
+}
