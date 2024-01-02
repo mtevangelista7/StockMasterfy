@@ -1,4 +1,6 @@
-﻿using StockMasterFy.Model;
+﻿using Newtonsoft.Json;
+using StockMasterFy.Model;
+using System.Net.Http;
 
 namespace StockMasterFy.Services
 {
@@ -11,9 +13,15 @@ namespace StockMasterFy.Services
             this.httpClient = httpClient;
         }
 
-        public async Task<IEnumerable<Usuario>> GetUsuarios()
+        public async Task<Usuario> RetornaUsuarioLoginSenha(Usuario usuario)
         {
-            return await httpClient.GetFromJsonAsync<Usuario[]>("api/usuarios");
+            HttpResponseMessage httpResponseMessage = await httpClient.PostAsJsonAsync<Usuario>("api/usuario", usuario);
+
+            string jsonString = await httpResponseMessage.Content.ReadAsStringAsync();
+
+            Usuario usuarioAux = JsonConvert.DeserializeObject<Usuario>(jsonString);
+
+            return usuarioAux;
         }
     }
 }

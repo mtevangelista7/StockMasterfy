@@ -4,6 +4,6 @@ namespace StockMasterFy.Services
 {
     public interface IUsuarioService
     {
-        Task<IEnumerable<Usuario>> GetUsuarios();
+        Task<Usuario> RetornaUsuarioLoginSenha(Usuario usuario);
     }
 }

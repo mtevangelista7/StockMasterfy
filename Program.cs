@@ -12,7 +12,7 @@ builder.Services.AddMudServices();
 
 builder.Services.AddHttpClient<IUsuarioService, UsuarioService>(client =>
 {
-    client.BaseAddress = new Uri("https://localhost:7057/");
+    client.BaseAddress = new Uri("https://localhost:7265/");
 });
 
 builder.Services.AddScoped<ICryptoService, CryptoService>();
