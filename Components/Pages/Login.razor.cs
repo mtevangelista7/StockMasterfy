@@ -32,11 +32,13 @@ namespace StockMasterFy.Components.Pages
                 usuarioAux = await UsuarioService.RetornaUsuarioLoginSenha(usuarioAux);
 
                 // Caso não tenha localizado o usuario
-                if (usuarioAux == null)
+                if (usuarioAux == null || usuarioAux.DsLogin == null)
                 {
                     await Util.MostraMensagem(DialogServiceAux, "O login é inválido!");
                     return;
                 }
+
+                usuarioAux.DsSenha = null;
 
                 // Armazena o usuario nos cookies
                 await Util.ArmazenaUsuarioCookie(JSRuntimeAux, CryptoServiceAux, usuarioAux);
@@ -44,6 +46,10 @@ namespace StockMasterFy.Components.Pages
             catch (Exception err)
             {
                 await Util.TrataErro(DialogServiceAux, err);
+            }
+            finally
+            {
+
             }
         }
 

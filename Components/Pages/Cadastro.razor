@@ -1,0 +1,51 @@
+﻿@page "/cadastro"
+
+@inherits CadastroBase
+
+<PageTitle>Cadastro</PageTitle>
+
+<MudGrid Spacing="0">
+    <MudItem xs="12" sm="12" md="12">
+        <MudPaper Elevation="0" Height="100dvh" Width="100%">
+            <MudGrid Spacing="0">
+                <MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
+                    <MudItem xs="7" sm="7" md="7">
+                        <MudPaper Elevation="0" Class="d-flex align-center justify-center pa-6 indigo lighten-5" Height="100dvh">
+                            <MudImage Fluid="true" ObjectFit="ObjectFit.Cover" ObjectPosition="ObjectPosition.Center" Src="img/vecteezy_online-education-concept-illustration-digital-classroom_10869731.png"></MudImage>
+                        </MudPaper>
+                    </MudItem>
+                    <MudItem xs="5" sm="5" md="5">
+                        <MudPaper Elevation="0" Class="d-flex align-center justify-center mud-info" Height="100dvh">
+                            <MudPaper Class="pa-6 indigo lighten-5" Elevation="4">
+                                <MudStack Spacing="4" Justify="Justify.Center" AlignItems="AlignItems.Center" Row="false">
+                                    <MudText Color="Color.Info" Typo="Typo.h6" Align="Align.Center">Faça seu cadastro :)</MudText>
+                                    <MudTextField @bind-Value="nomeUser" Style="background-color:  #08132B" T="string" Placeholder="Nome completo" Margin="Margin.Dense" Variant="Variant.Outlined"></MudTextField>
+                                    <MudTextField @bind-Value="loginUser" Style="background-color:  #08132B" T="string" Placeholder="Login" Margin="Margin.Dense" Variant="Variant.Outlined"></MudTextField>
+                                    <MudTextField @bind-Value="senhaUser" Style="background-color:  #08132B" T="string" Placeholder="Senha" Margin="Margin.Dense" Variant="Variant.Outlined"></MudTextField>
+                                    <MudTextField @bind-Value="confirmeSenhaUser" Style="background-color:  #08132B" T="string" Placeholder="Senha" Margin="Margin.Dense" Variant="Variant.Outlined"></MudTextField>
+                                    <MudButton OnClick="OnClickLogin" Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Login" Color="Color.Primary" Size="Size.Medium">CADASTRE-SE</MudButton>
+                                </MudStack>
+                            </MudPaper>
+                        </MudPaper>
+                    </MudItem>
+                </MudHidden>
+                <MudHidden Breakpoint="Breakpoint.MdAndDown" Invert="true">
+                    <MudItem xs="12" sm="12" md="12">
+                        <MudPaper Elevation="0" Class="d-flex align-center justify-center mud-info" Height="100dvh">
+                            <MudPaper Class="pa-6 indigo lighten-5" Elevation="4">
+                                <MudStack Spacing="4" Justify="Justify.Center" AlignItems="AlignItems.Center" Row="false">
+                                    <MudText Color="Color.Info" Typo="Typo.h6" Align="Align.Center">Faça seu cadastro :)</MudText>
+                                    <MudTextField @bind-Value="nomeUser" Style="background-color:  #08132B" T="string" Placeholder="Nome completo" Margin="Margin.Dense" Variant="Variant.Outlined"></MudTextField>
+                                    <MudTextField @bind-Value="loginUser" Style="background-color:  #08132B" T="string" Placeholder="Login" Margin="Margin.Dense" Variant="Variant.Outlined"></MudTextField>
+                                    <MudTextField @bind-Value="senhaUser" Style="background-color:  #08132B" T="string" Placeholder="Senha" Margin="Margin.Dense" Variant="Variant.Outlined"></MudTextField>
+                                    <MudTextField @bind-Value="confirmeSenhaUser" Style="background-color:  #08132B" T="string" Placeholder="Senha" Margin="Margin.Dense" Variant="Variant.Outlined"></MudTextField>
+                                    <MudButton OnClick="OnClickLogin" Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Login" Color="Color.Primary" Size="Size.Medium">CADASTRE-SE</MudButton>
+                                </MudStack>
+                            </MudPaper>
+                        </MudPaper>
+                    </MudItem>
+                </MudHidden>
+            </MudGrid>
+        </MudPaper>
+    </MudItem>
+</MudGrid>

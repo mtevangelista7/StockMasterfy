@@ -15,6 +15,8 @@ namespace StockMasterFy.Services
 
         public async Task<Usuario> RetornaUsuarioLoginSenha(Usuario usuario)
         {
+            usuario.DsNome = "";
+
             HttpResponseMessage httpResponseMessage = await httpClient.PostAsJsonAsync<Usuario>("api/usuario", usuario);
 
             string jsonString = await httpResponseMessage.Content.ReadAsStringAsync();
@@ -22,6 +24,17 @@ namespace StockMasterFy.Services
             Usuario usuarioAux = JsonConvert.DeserializeObject<Usuario>(jsonString);
 
             return usuarioAux;
+        }
+
+        public async Task<bool> InsereNovoUsuario(Usuario usuario)
+        {
+            HttpResponseMessage httpResponseMessage = await httpClient.PostAsJsonAsync<Usuario>("api/usuario/insere", usuario);
+
+            string jsonString = await httpResponseMessage.Content.ReadAsStringAsync();
+
+            bool usuarioInserido = JsonConvert.DeserializeObject<bool>(jsonString);
+
+            return usuarioInserido;
         }
     }
 }
