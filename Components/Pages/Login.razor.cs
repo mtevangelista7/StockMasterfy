@@ -14,6 +14,10 @@ namespace StockMasterFy.Components.Pages
         protected string loginUser = null;
         protected string senhaUser = null;
 
+        protected bool mostrarSenha;
+        protected InputType senhaInput = InputType.Password;
+        protected string senhaInputIcon = Icons.Material.Filled.VisibilityOff;
+
         protected async Task OnClickLogin()
         {
             Usuario usuarioAux = null;
@@ -42,6 +46,8 @@ namespace StockMasterFy.Components.Pages
 
                 // Armazena o usuario nos cookies
                 await Util.ArmazenaUsuarioCookie(JSRuntimeAux, CryptoServiceAux, usuarioAux);
+
+                NavigationManagerAux.NavigateTo("home");
             }
             catch (Exception err)
             {
@@ -69,5 +75,31 @@ namespace StockMasterFy.Components.Pages
 
             return true;
         }
+
+        protected async Task OnClickIconSenha()
+        {
+            try
+            {
+                if (mostrarSenha)
+                {
+                    mostrarSenha = false;
+                    senhaInputIcon = Icons.Material.Filled.VisibilityOff;
+                    senhaInput = InputType.Password;
+                }
+                else
+                {
+                    mostrarSenha = true;
+                    senhaInputIcon = Icons.Material.Filled.Visibility;
+                    senhaInput = InputType.Text;
+                }
+
+                StateHasChanged();
+            }
+            catch (Exception err)
+            {
+                await Util.TrataErro(DialogServiceAux, err);
+            }
+        }
+
     }
 }

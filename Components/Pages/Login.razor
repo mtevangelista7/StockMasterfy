@@ -19,8 +19,8 @@
                             <MudPaper Class="pa-6 indigo lighten-5" Elevation="4">
                                 <MudStack Spacing="4" Justify="Justify.Center" AlignItems="AlignItems.Center" Row="false">
                                     <MudText Color="Color.Info" Typo="Typo.h6" Align="Align.Center">Faça seu login :)</MudText>
-                                    <MudTextField @bind-Value="loginUser" Style="background-color:  #08132B" T="string" Placeholder="Login" Margin="Margin.Dense" Variant="Variant.Outlined"></MudTextField>
-                                    <MudTextField @bind-Value="senhaUser" Style="background-color:  #08132B" T="string" Placeholder="Senha" Margin="Margin.Dense" Variant="Variant.Outlined"></MudTextField>
+                                    <MudTextField @bind-Value="loginUser" FullWidth="true" Style="background-color:  #08132B" T="string" Placeholder="Email" Margin="Margin.Dense" Variant="Variant.Outlined"></MudTextField>
+                                    <MudTextField @bind-Value="senhaUser" FullWidth="true" Style="background-color:  #08132B" T="string" InputType="@senhaInput" Adornment="Adornment.End" AdornmentIcon="@senhaInputIcon" AdornmentColor="Color.Tertiary" OnAdornmentClick="OnClickIconSenha" AdornmentAriaLabel="Show Password" Placeholder="Senha" Margin="Margin.Dense" Variant="Variant.Outlined"></MudTextField>
                                     <MudButton OnClick="OnClickLogin" Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Login" Color="Color.Primary" Size="Size.Medium">LOGIN</MudButton>
                                 </MudStack>
                             </MudPaper>
@@ -33,8 +33,8 @@
                             <MudPaper Class="pa-6 indigo lighten-5" Elevation="4">
                                 <MudStack Spacing="4" Justify="Justify.Center" AlignItems="AlignItems.Center" Row="false">
                                     <MudText Color="Color.Info" Typo="Typo.h6" Align="Align.Center">Faça seu login :)</MudText>
-                                    <MudTextField @bind-Value="loginUser" Style="background-color:  #08132B" T="string" Placeholder="Login" Margin="Margin.Dense" Variant="Variant.Outlined"></MudTextField>
-                                    <MudTextField @bind-Value="senhaUser" Style="background-color:  #08132B" T="string" Placeholder="Senha" Margin="Margin.Dense" Variant="Variant.Outlined"></MudTextField>
+                                    <MudTextField @bind-Value="loginUser" FullWidth="true" Style="background-color:  #08132B" T="string" Placeholder="Email" Margin="Margin.Dense" Variant="Variant.Outlined"></MudTextField>
+                                    <MudTextField @bind-Value="senhaUser" FullWidth="true" Style="background-color:  #08132B" T="string" InputType="@senhaInput" Adornment="Adornment.End" AdornmentColor="Color.Tertiary" AdornmentIcon="@senhaInputIcon" OnAdornmentClick="OnClickIconSenha" AdornmentAriaLabel="Show Password" Placeholder="Senha" Margin="Margin.Dense" Variant="Variant.Outlined"></MudTextField>
                                     <MudButton OnClick="OnClickLogin" Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Login" Color="Color.Primary" Size="Size.Medium">LOGIN</MudButton>
                                 </MudStack>
                             </MudPaper>
