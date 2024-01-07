@@ -5,6 +5,16 @@ namespace StockMasterFy.Components.Pages
 {
     public class HomeBase : SmComponentBase
     {
-
+        protected async Task OnClickProdutos()
+        {
+            try
+            {
+                NavigationManagerAux.NavigateTo("produtos");
+            }
+            catch (Exception err)
+            {
+                await Util.TrataErro(DialogServiceAux, err);
+            }
+        }
     }
 }

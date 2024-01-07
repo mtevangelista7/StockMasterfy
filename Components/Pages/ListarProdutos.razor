@@ -1,0 +1,29 @@
+﻿@page "/listarprodutos"
+@inherits ProdutosBase
+
+<PageTitle>Produtos</PageTitle>
+
+
+<MudGrid Spacing="0">
+    <MudItem xs="12" sm="12" md="12">
+        <div id="unique_id_scroll_section" class="ma-0" style="height:300px;overflow: auto;">
+            <MudPaper Width="100%" Height="100%" Elevation="0" Class="pa-0 ma-0 overflow-x-hidden overflow-y-auto">
+                <MudGrid Spacing="0">
+                    <MudItem xs="12" sm="12" md="10">
+                        <MudTextField FullWidth="true" Variant="Variant.Filled" T="string"></MudTextField>
+                    </MudItem>
+                    <MudItem xs="12" sm="12" md="2">
+                        <MudButton>Adicionar novo produtos</MudButton>
+                    </MudItem>
+                </MudGrid>
+
+                <MudScrollToTop TopOffset="100"                             
+                                Selector="#unique_id_scroll_section"
+                                VisibleCssClass="visible absolute"
+                                HiddenCssClass="invisible">
+                    <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.ArrowUpward">Go to top</MudButton>
+                </MudScrollToTop>
+            </MudPaper>
+        </div>
+    </MudItem>
+</MudGrid>
